@@ -1,0 +1,29 @@
+#The conception of the solution i propose,
+#since the the rsync performs more than tar solution because it does copy only
+#the modified files
+#So we use the rsync for daily backup
+#and we archive weekly with tar the backup_copy we do daily.
+
+hatim@hatim-VirtualBox:~/Desktop/Degree/buckup_files$ vim daily_script.sh
+hatim@hatim-VirtualBox:~/Desktop/Degree/buckup_files$ vim weekly_script.sh
+hatim@hatim-VirtualBox:~/Desktop/Degree/buckup_files$ ls -l
+total 8
+-rw-rw-r-- 1 hatim hatim 625 مارس    4 23:23 daily_script.sh
+-rw-rw-r-- 1 hatim hatim 627 مارس    4 23:23 weekly_script.sh
+hatim@hatim-VirtualBox:~/Desktop/Degree/buckup_files$ chmod u+x daily_script.sh 
+hatim@hatim-VirtualBox:~/Desktop/Degree/buckup_files$ chmod u+x weekly_script.sh 
+hatim@hatim-VirtualBox:~/Desktop/Degree/buckup_files$ ls -l
+total 8
+-rwxrw-r-- 1 hatim hatim 625 مارس    4 23:23 daily_script.sh
+-rwxrw-r-- 1 hatim hatim 627 مارس    4 23:23 weekly_script.sh
+hatim@hatim-VirtualBox:~/Desktop/Degree/buckup_files$ pwd
+/home/hatim/Desktop/Degree/buckup_files
+hatim@hatim-VirtualBox:~/Desktop/Degree/buckup_files$ sudo crontab -e
+
+#here we add the executing with cron to automatically bucket up our source files
+#we add at the end the cron lines (2 in our case)
+
+#everyday at 00:00
+00 00 * * * bash /home/hatim/Desktop/Degree/buckup_files/daily_script.sh
+#every sunday at 08:00 
+00 08 * * 7 bash /home/hatim/Desktop/Degree/buckup_files/weekly_script.sh
