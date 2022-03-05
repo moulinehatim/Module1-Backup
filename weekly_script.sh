@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#The source to backup, i have chosen the daily backup directory of 
+#The source to backup, i have chosen the daily backup directory
 backup_files="/mnt/backup/daily"
 
 #The destination where to backup to the chosen source
