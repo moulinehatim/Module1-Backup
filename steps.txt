@@ -1,5 +1,5 @@
 #The conception of the solution i propose,
-#since the the rsync performs more than tar solution because it does copy only
+#since the the rsync performs better than tar solution because it does copy only
 #the modified files
 #So we use the rsync for daily backup
 #and we archive weekly with tar the backup_copy we do daily.
