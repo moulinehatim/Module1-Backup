@@ -2,7 +2,7 @@
 #since the the rsync performs better than tar solution because it does copy only
 #the modified files
 #So we use the rsync for daily backup
-#and we archive weekly with tar the backup_copy we do daily.
+#and we archive weekly with tar the last backup_copy we do daily.
 
 hatim@hatim-VirtualBox:~/Desktop/Degree/buckup_files$ vim daily_script.sh
 hatim@hatim-VirtualBox:~/Desktop/Degree/buckup_files$ vim weekly_script.sh
